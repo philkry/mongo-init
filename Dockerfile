@@ -1,6 +1,6 @@
 # Use an official MongoDB image as the base image
 FROM mongo:latest
-
+LABEL org.opencontainers.image.description Init-Container to create MongoDB database and user
 # Create a directory for the script
 RUN mkdir -p /usr/local/bin
 

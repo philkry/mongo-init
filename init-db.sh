@@ -2,11 +2,11 @@
 
 # Variables
 MONGO_HOST=${MONGO_HOST:-"mongodb://mongodb:27017"}
-DB_NAME=${DB_NAME:-"mydatabase"}
-DB_USER=${DB_USER:-"myuser"}
-DB_PASS=${DB_PASS:-"mypassword"}
-ROOT_USER=${ROOT_USER:-"root"}
-ROOT_PASS=${ROOT_PASS:-"rootpassword"}
+MONGO_DB_NAME=${DB_NAME:-"mydatabase"}
+MONGO_DB_USER=${DB_USER:-"myuser"}
+MONGO_DB_PASS=${DB_PASS:-"mypassword"}
+MONGO_ROOT_USER=${ROOT_USER:-"root"}
+MONGO_ROOT_PASS=${ROOT_PASS:-"rootpassword"}
 
 # Wait for MongoDB to be ready
 until mongo $MONGO_HOST/admin -u $ROOT_USER -p $ROOT_PASS --eval "print(\"waited for connection\")"; do

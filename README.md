@@ -7,8 +7,8 @@ Tiny script to create MongoDB database and user. To be used as init-container on
 |Variable|Default Value|Description|
 |---|---|---|
 |MONGO_HOST |mongodb://mongodb:27017|MongoDB connection string|
-|DB_NAME    |mydatabase|Database to create|
-|DB_USER    |myuser|User to create and grant readWrite to new DB|
-|DB_PASS    |mypassword|Password of new user|
-|ROOT_USER  |root|Root user of MongoDB instance|
-|ROOT_PASS  |rootpassword|Root user password|
+|MONGO_DB_NAME    |mydatabase|Database to create|
+|MONGO_DB_USER    |myuser|User to create and grant readWrite to new DB|
+|MONGO_DB_PASS    |mypassword|Password of new user|
+|MONGO_ROOT_USER  |root|Root user of MongoDB instance|
+|MONGO_ROOT_PASS  |rootpassword|Root user password|

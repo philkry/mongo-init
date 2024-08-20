@@ -9,13 +9,13 @@ MONGO_ROOT_USER=${ROOT_USER:-"root"}
 MONGO_ROOT_PASS=${ROOT_PASS:-"rootpassword"}
 
 # Wait for MongoDB to be ready
-until mongo $MONGO_HOST/admin -u $ROOT_USER -p $ROOT_PASS --eval "print(\"waited for connection\")"; do
+until mongosh $MONGO_HOST/admin -u $ROOT_USER -p $ROOT_PASS --eval "print(\"waited for connection\")"; do
   >&2 echo "MongoDB is unavailable - sleeping"
   sleep 2
 done
 
 # Create the database and user
-mongo $MONGO_HOST/admin -u $ROOT_USER -p $ROOT_PASS --eval "db.getSiblingDB('$DB_NAME').createUser({user: '$DB_USER', pwd: '$DB_PASS', roles: [{role: 'readWrite', db: '$DB_NAME'}]});"
+mongosh $MONGO_HOST/admin -u $ROOT_USER -p $ROOT_PASS --eval "db.getSiblingDB('$DB_NAME').createUser({user: '$DB_USER', pwd: '$DB_PASS', roles: [{role: 'readWrite', db: '$DB_NAME'}]});"
 
 # Exit after the script is executed
 echo "MongoDB user and database created successfully."

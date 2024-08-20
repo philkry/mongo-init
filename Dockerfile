@@ -1,5 +1,5 @@
 # Use an official MongoDB image as the base image
-FROM mongo:latest
+FROM rtsp/mongosh:2.3.0@sha256:e475dffadf38a5e84f4abc6cef8960445bc3ec9c69b29ff5ac2a445b20758aec
 LABEL org.opencontainers.image.description Init-Container to create MongoDB database and user
 # Create a directory for the script
 RUN mkdir -p /usr/local/bin
